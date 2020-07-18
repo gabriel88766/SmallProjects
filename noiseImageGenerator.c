@@ -2,7 +2,12 @@
 Author: Gabriel Vinícius, 07/17/2020
 
 This program can generate a 640x480 image in bitmap format with random RGB pixels. 
+This code can be modified to generate noise in others color ranges.
+Some examples of images created with this file(modified) https://prnt.sc/tk059k https://prnt.sc/tk05x7
+
 Esse programa pode gerar uma imagem 640x480 no formato bitmap com pixels RGB aleatórios.
+Este código pode ser modificado para gerar imagens com ruído em certo intervalos de cores. 
+Alguns exemplos de imagens feitas com esse arquivo https://prnt.sc/tk059k https://prnt.sc/tk05x7
 */
 
 #include <stdio.h>
