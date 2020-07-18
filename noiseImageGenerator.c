@@ -3,11 +3,21 @@ Author: Gabriel Vinícius, 07/17/2020
 
 This program can generate a 640x480 image in bitmap format with random RGB pixels. 
 This code can be modified to generate noise in others color ranges.
-Some examples of images created with this file(modified) https://prnt.sc/tk059k https://prnt.sc/tk05x7
+Some examples of images created with this file(modified) in Links
 
-Esse programa pode gerar uma imagem 640x480 no formato bitmap com pixels RGB aleatórios.
-Este código pode ser modificado para gerar imagens com ruído em certo intervalos de cores. 
-Alguns exemplos de imagens feitas com esse arquivo https://prnt.sc/tk059k https://prnt.sc/tk05x7
+Links:
+https://photos.app.goo.gl/jCfkrRA8jMV78cRa6
+https://photos.app.goo.gl/iLBUh3UDGH4rEMis6
+
+header_and_infoheader: 
+For more details about this array, see https://www.fileformat.info/format/bmp/corion.htm 
+and you'll can change the resolution of the image.
+file size in (array[2], int 4 bytes, little-endian) =  width*height*3 + 0x36
+width in (array[18], int 4 bytes, little-endian)
+height in (array[22], int 4 bytes, little-endian)
+data size in (array[34], int 4 bytes, little-endian) = width*height*3
+(optional)resolution(pixels/meters) in array[38] for width and in array[42] for height
+
 */
 
 #include <stdio.h>
@@ -19,7 +29,6 @@ int main(){
 unsigned char header_and_infoheader[] = {'B','M',0x36,0x10,0xE,0,0,0,0,0,0x36,0,0,0,0x28,0,0,0,0x80,
                                              2,0,0,0xE0,1,0,0,1,0,0x18,0,0,0,0,0,0,0x10,0xE,0,0x12,
                                                 0xB,0,0,0x12,0xB,0,0,0,0,0,0,0,0,0,0};
-unsigned long randomnumber;
 unsigned char randBGR[640][480][3];
 int i,j,k;
 FILE *f;
