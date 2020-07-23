@@ -1,6 +1,6 @@
 /*
 Author: Gabriel Vinícius, 07/17/2020
-This program can generate a image in bitmap format with random RGB pixels.
+This program can generate a image in bitmap(.bmp) format with random RGB pixels.
 This code can be modified to generate noise in others color ranges.
 Some examples of images created with this file(modified) in Links
 Links:
@@ -17,7 +17,6 @@ data size in (array[34], int 4 bytes, little-endian) = width*height*3
 */
 
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -96,7 +95,6 @@ void make_random_image(char *filename, unsigned int width, unsigned int height, 
 int main(){
 
 unsigned int width,height,aux1,aux2,aux3,mode;
-FILE *f;
 char filename[55] = {0};
 RGB lower,upper;
 printf("Input: width and height(width must be multiple of 4)\n\n");
