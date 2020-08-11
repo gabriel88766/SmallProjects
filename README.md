@@ -7,6 +7,9 @@ About the projects
 ### fibonacciMASMAssembly:
 In this program was writed a function named fibonacci in assembly and put inside a code in C language. It compiles using command gcc -m32 -masm=intel fibonacciMASMAssembly.c or something like this with -m32 and -masm=intel\
 The sequence there starts F<sub>0</sub> = 1 , F<sub>1</sub> = 1 , F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub>\
-You need to enter n and then you will se the Fn output
+You need to enter n and then you will se the Fn output\
+This program was made when I was trying to learn to code with inline MASM.
 ### noiseImageGenerator:
 This program was made for generate random pixels and write into a bmp file. This program has 2 modes to write pixels and can be compiled in any C compiler with standard libraries.
+### Dir: spojNASM:
+All my submitted problems in spoj using NASM in an Unix-based environment. There will be codes about any problems there
