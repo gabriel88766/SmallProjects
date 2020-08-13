@@ -1,0 +1,2 @@
+All programs within this folder are being compiled on https://www.jdoodle.com/compile-assembler-nasm-online/
+I'm using Linux syscall to stdin and stdout
