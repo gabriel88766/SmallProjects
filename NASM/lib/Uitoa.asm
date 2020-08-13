@@ -5,7 +5,7 @@
 section .data
     
 section .bss
-    result resb 32
+    result resb 33
     
 section .text
     global _start
@@ -52,6 +52,8 @@ Uint32tostring: ;params: int base, pointer to v[N](This function doesn't care ab
         add ebx, 1
         sub ecx, 1
         jnz basele10
+    
+    	mov BYTE[ebx], 0; null character
     
 endUint32tostring:    
     	mov esp,ebp
