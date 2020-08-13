@@ -63,7 +63,7 @@ int32tostring: ;params: int base, pointer to v[N](This function doesn't care abo
         sub ecx, 1
         jnz baseg10
         
-        jmp endUint32tostring
+        jmp endint32tostring
         
     basele10: ;IF base is less than or equal 10 (less instructions)
         pop edx
@@ -85,7 +85,7 @@ _start:
 	push eax
 	push ecx
 	push 10
-	call Uint32tostring
+	call int32tostring
 	add esp, 12
 	
 	;prints the number in that base
