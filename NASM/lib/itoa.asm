@@ -41,7 +41,6 @@ int32tostring: ;BEGIN: params: int base, pointer to v[N](This function doesn't c
         cmp eax,0
         jz ispositive
     isnegativeL2:
-        add ecx,1
         mov BYTE [ebx],'-'
         add ebx,1
         
