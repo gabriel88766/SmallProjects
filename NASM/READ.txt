@@ -1,2 +1,3 @@
 All programs within this folder are being compiled on https://www.jdoodle.com/compile-assembler-nasm-online/
 I'm using Linux syscall to stdin and stdout
+This link is my guide for system calls http://faculty.nps.edu/cseagle/assembly/sys_call.html
