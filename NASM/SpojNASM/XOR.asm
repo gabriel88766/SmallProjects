@@ -1,4 +1,4 @@
-; Easiest program in SPOJ
+; https://www.spoj.com/problems/BSCXOR/
 ; Input X and Y, two numbers: "X Y"
 ; Output X^Y
 ;
