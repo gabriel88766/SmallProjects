@@ -23,7 +23,7 @@ void newBigint(bigint *b,char *value,int max_len){
     while(pointer>=0){
         count = 0;
         while((count!=9)&&(pointer>=0)){
-            if( value[pointer]<'0' || value[pointer]>'9'){ /* unexpected character, break! (You can change this line to ignore it)*/
+            if( value[pointer]<'0' || value[pointer]>'9'){ /* unexpected character, break! (You can change two lines below to ignore it)*/
                 pointer=-1;
                 break;
             }
