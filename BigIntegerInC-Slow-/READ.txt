@@ -1,0 +1,15 @@
+# BigInteger in C(Slow)
+This is my implementation of big integer in C
+You can print your number and make a new number with a string source using printBigint or newBigint
+you can multiply by small numbers(smaller than 10^9) using multiplySmall
+And of course, you can modify it to make it better
+
+## Benchmark AMD Ryzen 5 3500U (this program can use only 1 thread)
+2^50000 1.8s
+2^100000 4.2s
+3^50000 2.5s
+7^50000 3.7s
+50000!  16.3s
+It's not obviously as fast as others good algorithms but is easy to learn and can do normal math
+
+New functions will be added soon (September 2020)
