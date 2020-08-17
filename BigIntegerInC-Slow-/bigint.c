@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
 typedef unsigned int u32;
 typedef unsigned long long int u64;
 #define Billion 1000000000
