@@ -61,12 +61,9 @@ void multiplySmall(bigint *b,int num){
 void printBigint(bigint b){
     u32 aux;
     int i,j=0;
-    for(i=(b.len-1);i>=0;i--){
-        if(i==(b.len-1))
-            printf("%d",b.p[i]);
-        else
-            printf("%.09d",b.p[i]);
-
+    printf("%d",b.p[b.len-1]);
+    for(i=(b.len-2);i>=0;i--){   
+         printf("%.09d",b.p[i]);
     }
     printf("\n");
 }
@@ -75,8 +72,8 @@ int main() {
    int t,i,a,j;
    bigint b;
    newBigint(&b,"1",60000);
-   for(i=0;i<700000;i++){
-    multiplySmall(&b,2);
+   for(i=0;i<10000;i++){
+    multiplySmall(&b,2); /*Example */
    }
    printBigint(b);
    free(b.p);
