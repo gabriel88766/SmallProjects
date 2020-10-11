@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
+
 typedef unsigned int u32;
 typedef unsigned long long int u64;
-#define Billion 1000000000
 
+const u64 Billion = 1000*1000*1000;
 u32 powersOf10[] = { 1,10,100,1000,10000,100000,1000000,10000000,100000000};
 
 typedef struct bigint{
@@ -40,6 +42,36 @@ void freeBigint(bigint *b){
     b->len=0;
 }
 
+void multiplyBig(bigint *b,bigint *c){
+    int i,j,maxlen = b->len + c->len;
+    u32 carry=0,*v = calloc(maxlen,sizeof(u32));
+    u64 aux;
+    for(i=0;i<b->len;i++){
+        for(j=0; j < c->len; j++){
+            aux = c->p[j];
+            aux *= b->p[i];
+            aux += carry;
+            v[i+j] += aux%Billion;
+            if(v[i+j] >= Billion){
+                carry=1;
+                v[i+j] -= Billion;
+            }else carry=0;
+            carry += aux/Billion;
+        }
+        v[i+c->len]+=carry;
+        if(i!=(b->len-1))carry=0;
+    }
+    if(carry){
+        b->len = maxlen;
+    }else{
+        b->len = maxlen - 1;
+    }
+    for(i=0;i<maxlen;i++){
+        b->p[i] = v[i];
+    }
+    free(v);
+}
+
 void multiplySmall(bigint *b,int num){
     u64 aux;
     u32 carry=0;
@@ -57,11 +89,29 @@ void multiplySmall(bigint *b,int num){
     }
 }
 
+void addBig(bigint *b,bigint *c){
+    int bsz = b->len, csz = c->len, maxsz, i;
+    u32 carry=0;
+    u64 aux;
+    maxsz = (bsz > csz ? bsz : csz);
+    for(i=0;i<maxsz;i++){
+        aux = 0;
+        if(csz>i) b->p[i] += c->p[i];
+        b->p[i]+=carry;
+        if(b->p[i]>=Billion){
+            b->p[i]-=Billion;
+            carry = 1;
+        }else carry = 0;
+    }
+    b->len = maxsz;
+    if(carry) b->p[maxsz] = 1,b->len=maxsz+1;
+}
+
 void printBigint(bigint b){
     u32 aux;
     int i,j=0;
     printf("%d",b.p[b.len-1]);
-    for(i=(b.len-2);i>=0;i--){   
+    for(i=(b.len-2);i>=0;i--){
          printf("%.09d",b.p[i]);
     }
     printf("\n");
@@ -69,12 +119,13 @@ void printBigint(bigint b){
 
 int main() {
    int t,i,a,j;
-   bigint b;
-   newBigint(&b,"1",60000);
-   for(i=0;i<10000;i++){
-    multiplySmall(&b,2); /*Example */
+   bigint b,c;
+   newBigint(&b,"2",60000);
+   newBigint(&c,"2",1);
+   for(i=0;i<1e5-1;i++){
+       addBig(&b,&b); /*Example */
    }
    printBigint(b);
-   free(b.p);
+   freeBigint(&b);
    return 0;
 }
