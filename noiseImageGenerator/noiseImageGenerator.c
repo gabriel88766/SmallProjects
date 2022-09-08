@@ -13,7 +13,7 @@ file size in (array[2], int 4 bytes, little-endian) =  width*height*3 + 0x36
 width in (array[18], int 4 bytes, little-endian)
 height in (array[22], int 4 bytes, little-endian)
 data size in (array[34], int 4 bytes, little-endian) = width*height*3
-(optional)resolution(pixels/meters) in array[38] for width and in array[42] for height
+(optional)resolution(pixels/meters) in array[38] for width and in array[42] for height.
 */
 
 #include <stdio.h>
