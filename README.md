@@ -2,7 +2,7 @@
 Here are all my small projects, whether they are reusable functions in other projects or small projects for academic purposes.\
 I usually can use C, C++ or Assembly but others languages can be found here too
 
-About the projects:
+About the projects
 
 ### bigIntegerInC-Slow
 Here is my implementation of big integer. Is slower than the python and Java implementation but it can do well in some problems. It can multiply big numbers in O(n²)
