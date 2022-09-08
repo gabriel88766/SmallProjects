@@ -5,7 +5,7 @@ I usually can use C, C++ or Assembly but others languages can be found here too
 About the projects:
 
 ### bigIntegerInC-Slow
-Here is my implementation of big integer. Is slower than the python and Java implementation but it can do well in some problems. It can multiply big numbers in O(n²)
+Here is my implementation of big integer. Is slower than the python and Java implementation but it can do well in some problems. It can multiply big numbers in O(n²).
 ### InlineAssembly/fibonacciMASMAssembly:
 In this program was writed a function named fibonacci in assembly and put inside a code in C language. It compiles using command gcc -m32 -masm=intel fibonacciMASMAssembly.c or something like this with -m32 and -masm=intel\
 This program was made when I was trying to learn to code with inline Assembly in C. 
