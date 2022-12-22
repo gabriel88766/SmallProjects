@@ -6,6 +6,6 @@ number=1
 while [ $number -le 10 ]
 do
     echo $number
-    number=$(($number+1)) #another way, number=`expr $number+1`
+    number=$(($number+1)) #another way, number=`expr $number+1` or $((number + 1))
 done
 

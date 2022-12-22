@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #execute ./fibonacci.sh number
-#check if there is args and exit with error
+#check if there is no args and exit with error
 if [ $# -lt 1 ]
 then 
     1>&2 echo "You must pass 1 positive number as argument"
