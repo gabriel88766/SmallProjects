@@ -9,10 +9,11 @@ then
     exit 0
 fi
 string_test=$(< $1) #reading and storing file in string
+string_test="$(printf "$string_test")"
 #checking if there are differences
-xxd <<< $string_test > file1.ignore
+xxd <<< $string_test
 xxd $1 > file2.ignore
-if [[  file1 == file2 ]]
+if [[  file1.ignore == file2.ignore ]]
 then
     echo "its equal"
 else
