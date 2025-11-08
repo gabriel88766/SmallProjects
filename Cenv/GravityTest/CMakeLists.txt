@@ -14,3 +14,5 @@ add_executable(main WIN32 main.c)
 
 # Link to the actual SDL3 library.
 target_link_libraries(main PRIVATE SDL3::SDL3)
+
+target_compile_options(main PRIVATE -O2)
